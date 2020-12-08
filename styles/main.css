@@ -1,0 +1,424 @@
+:root {
+    --main-bg-color: #1b82b1;
+    --main-bg-image: url("background_one.jpg");
+    --alt-bg-color: rgba(255, 255, 255, 0.954);
+    /* --alt-bg-image: url("https://psitriangle.net/gallery/plog-content/images/sacred-geometry/exhibit-theta/infinitecosmos01_1600x1125.png"); */
+    --alt-bg-image: url("https://media1.giphy.com/media/U3qYN8S0j3bpK/giphy.gif");
+    --main-font-color: #FFFFFF;
+    --alt-font-color: rgba(0, 0, 0, 0.85);
+    --alt-font-color-light: rgba(0, 0, 0, 0.68);
+    --header-bg-color: blue;
+    --topnav-bg-color: rgb(17, 9, 92);
+    --nav-bg-color: rgb(126, 169, 233);
+    --projectname-textshadow: 0 0 5px #d10808, 0 0 10px #d10808, 0 0 15px #d10808, 0 0 20px #d10808, 0 0 20px #d10808, 0 0 20px #d10808, 0 0 20px #d10808;
+    --body-textshadow:0 0 5px #080bd1, 0 0 10px #0815d1, 0 0 15px #0815d1, 0 0 20px #085fd1, 0 0 20px #083ed1, 0 0 20px #082dd1, 0 0 20px #3408d1; 
+  }
+  
+  body.dark-mode {
+    --main-bg-color: rgb(0, 0, 0);
+    --alt-bg-color: rgb(22, 21, 21);
+    --main-bg-image: var(--alt-bg-image);
+    --main-font-color: #000000;
+    --topnav-bg-color: black;
+    --alt-font-color: rgba(255, 255, 255, 0.85);
+    --alt-font-color-light: rgba(227, 227, 227, 0.68);
+    --header-bg-color: #7965dc;
+    --nav-bg-color: rgb(43, 5, 43);
+    --projectname-textshadow: 0 0 5px #08d134a6, 0 0 10px #17b611, 0 0 15px #08d119c5, 0 0 20px #08d13a, 0 0 20px #08d112, 0 0 20px #08d123, 0 0 20px #08d112;
+    --body-textshadow: 0 0 5px #08d134a6, 0 0 10px #17b611, 0 0 15px #08d119c5, 0 0 20px #08d13a, 0 0 20px #08d112, 0 0 20px #08d123, 0 0 20px #08d112;
+  }
+body {
+    background-color: var(--main-bg-color);
+    background-image: var(--main-bg-image);
+    /* background-image: url(./src/game_background.jpg); */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+     background-size: cover; 
+    /**background-color:rgba(177, 40, 40, 0.89);
+    /* (68, 62, 62, 0.89) Our original color */
+    color: gray;
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "nav main"
+    ;
+    /**rgb(58, 72, 97)**/
+}
+header {
+    grid-area: header;
+    background-color: var(--header-bg-color);
+    /* border: 2px solid red; */
+    margin-left: 60px;
+    width: 90%;
+}
+
+nav {
+    grid-area: nav;
+    background-color: var(--nav-bg-color);
+    /*background-color: rgb(126, 169, 233);*/
+    /* border: 2px solid purple; */
+    margin-left: 60px;
+    padding: 8px;
+}
+
+
+main {
+    grid-area: main;
+    /* border: 2px solid blue;  */
+    width: 100%;
+    color: white;
+    font-size: 20px;
+}
+ .toggle-switch {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0.5rem;
+  }  
+  
+  .toggle-switch input {
+    display: none;
+  }
+  
+  .toggle-switch label {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: var(--alt-bg-color);
+    border-radius: 20px;
+  } 
+
+   .toggle-switch label::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--alt-font-color);
+    top: 1px;
+    left: 1px;
+    transition: all 0.3s;
+  }
+  
+  .toggle-switch input:checked+label::after {
+    left: 20px;
+  }
+  
+  .toggle-switch input:checked+label {
+    background-color: var(--alt-bg-color);
+  } 
+
+  .topnav {
+    /* display: flex; */
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: var(--topnav-bg-color);
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .topnav ul li {
+    display: inline-block;
+  
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav ul li a {
+    /* display: block; */
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav ul li a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav ul li a.active {
+    background-color: red;
+    color: white;
+  }
+  #project-title {
+    list-style-type: none;
+  }
+
+  #project-title a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #e59797e7;
+    text-align: center;
+    background-color: transparent;
+    text-shadow: var(--projectname-textshadow);
+    /* text-shadow: 0 0 5px #d10808, 0 0 10px #d10808, 0 0 15px #d10808, 0 0 20px #d10808, 0 0 20px #d10808, 0 0 20px #d10808, 0 0 20px #d10808; */
+  }
+
+  #game-list{
+    list-style-type: none;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #b3bfc9e7;
+    text-align: center;
+    background-color: transparent;
+    text-shadow: var(--body-textshadow);
+    /* text-shadow: 0 0 5px #080bd1, 0 0 10px #0815d1, 0 0 15px #0815d1, 0 0 20px #085fd1, 0 0 20px #083ed1, 0 0 20px #082dd1, 0 0 20px #3408d1; */
+  }
+
+  #review-container{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+    justify-content: flex-start;
+    /* text-align: center; */
+    /* margin: 0px auto; */
+    background-color: transparent;
+    /* padding: 10px; */
+    border-radius: 10px;
+    width: 720px;
+    padding: 520x;
+    border: 15px solid gray;
+    margin: 0;
+    float: center;
+    background-image: url("https://i.pinimg.com/originals/64/5c/8d/645c8d877f6e2aad7fa6545140c72a52.gif");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /* background-size: 2560px 1500px; */
+     background-size: cover; */
+
+  }
+  #game-review{
+    /* width: 300px; */
+    /* border: 15px solid green; */
+    padding: 50px;
+    margin: 20px;
+    float: center;
+    background-color: transparent;
+  }
+
+/** styling for login attempt *// 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5px auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+/* for our login button decore */ 
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 10px;
+  margin: 8px 0;
+  border: 2px solid green;
+  cursor: pointer;
+  width: 40;
+  height: 30%;
+  align-items: center;
+}
+/* centers our avatar image */ 
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+form {
+  border: 3px solid #f1f1f1;
+}
+
+
+/* card attempts*/ 
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 10px; /* 5px rounded corners */
+  align-content: center;
+  /* position: absolute; */
+  padding: 190px;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+  border-radius: 10px 10px 10px 10px;
+  float: right;
+  width:  300px;
+  height: 300px;
+  object-fit: cover;
+  
+}
+.game-listnav {
+  /* margin-left:20px; */
+}
+.container {
+  padding: 16px;
+}
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+.game-card{
+  background-color: black;
+}
+/* This one is the class placed one new gameform and new reviewform */
+.sideBySideForm{
+  display: inline-block;
+  width: 40%;
+  height: 40%;
+  box-sizing: border-box;
+  }
+  input[type=text] {
+    background-color: #0dbb24;
+    color: white;
+    padding: 12px 20px 12px 40px;
+    background-image: url("https://img.freepik.com/free-vector/space-background-with-abstract-shape-stars_189033-30.jpg?size=626&ext=jpg");
+    text-shadow: var(--body-textshadow);
+    /* text-shadow: 0 0 5px #080bd1, 0 0 10px #0815d1, 0 0 15px #0815d1, 0 0 20px #085fd1, 0 0 20px #083ed1, 0 0 20px #082dd1, 0 0 20px #3408d1; */
+  }
+  /* Anything within label tag color changed to white so more visible  */
+  label{
+    color: white;
+  }
+  h4{
+    color: white;
+  }
+  /* css stlying on attempt for overlay  */
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+    /* div.gallery {
+      border: 10px solid green;
+      float: center;
+      width: 180px;
+      display: grid;
+      grid-column: ;
+      grid-template-columns: 40px 50px auto 50px 40px;
+      grid-row-gap: 40px;
+      justify-content: center;
+    }
+    
+    div.gallery:hover {
+      border: 10px solid green;
+    }
+    
+    div.gallery img {
+      width: 100%;
+      height: auto%;
+    }
+    
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+    .image-gallery{
+      box-sizing: border-box;
+      grid-column-gap: 24px;
+      column-gap: 24px;
+      display: grid;
+      grid-auto-flow: column;
+      padding-bottom: 12px;
+      padding-right: 0px;
+      -webkit-box-align: left;
+
+
+    } */
+    .gallery{
+      margin:10px 40px;
+      justify-content: center;
+    }
+    .gallery img{
+      transition:1s;
+      padding:15px;
+      width:200px;
+    }
+    .gallery img:hover{
+      filter:grayscale(100%);
+      transform: scale(1.1);
+    }
+   
